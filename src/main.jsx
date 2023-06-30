@@ -2,36 +2,23 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import {
-  createBrowserRouter,
+
   RouterProvider,
 } from "react-router-dom";
-import Main from './layout/Main';
-import Home from './pages/home/Home';
+import router from './router/Router';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Main></Main>,
-    children: [
-      {
-        path: '/',
-        element: <Home></Home>
-      }
-    ]
-  },
-]);
-
-
-
-
+const queryClient = new QueryClient()
 
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div>
-      <RouterProvider router={router} />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div>
+        <RouterProvider router={router} />
+      </div>
+    </QueryClientProvider>
   </React.StrictMode>,
 )

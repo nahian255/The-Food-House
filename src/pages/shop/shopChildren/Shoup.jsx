@@ -1,0 +1,10 @@
+
+const Shoup = () => {
+    return (
+        <div>
+            <h1>shop</h1>
+        </div>
+    );
+};
+
+export default Shoup;
