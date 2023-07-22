@@ -11,6 +11,8 @@ import Drinks from "../pages/shop/shopChildren/Drinks";
 import Dessert from "../pages/shop/shopChildren/Dessert";
 import Salad from "../pages/shop/shopChildren/Salad";
 import Shoup from "../pages/shop/shopChildren/Shoup";
+import Longin from "../pages/login/Longin";
+import SingUp from "../pages/singUp.jsx/SingUp";
 
 const router = createBrowserRouter([
     {
@@ -60,6 +62,14 @@ const router = createBrowserRouter([
 
         ]
     },
+    {
+        path: "login",
+        element: <Longin></Longin>
+    },
+    {
+        path: "singup",
+        element: <SingUp />
+    }
 
 ]);
 
