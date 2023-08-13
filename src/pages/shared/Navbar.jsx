@@ -1,15 +1,31 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BiAlignLeft } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../authProvidr/Provider';
+import { getAuth, signOut } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
 // import { HiMenu, HiX } from 'react-icons/hi'; // Example icons from React Icons library
 
 
 const Navbar = () => {
+    const auth = getAuth(app);
+
+    const { user, } = useContext(AuthContext)
+    console.log(user);
     const [isMenuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
+    };
+
+    // sign Out button ...
+    const handelOut = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+        }).catch(() => {
+            // An error happened.
+        });
     };
 
     const li = (
@@ -18,6 +34,18 @@ const Navbar = () => {
             <li> <Link to='/menu' className="text-white hover:text-orange-400">Menu</Link></li>
             <li> <Link to='shop/salad' className="text-white hover:text-orange-400">Shop</Link></li>
             <li> <Link to='/contactus' className="text-white hover:text-orange-400">Contactus</Link></li>
+            {
+                user ?
+                    (
+                        <li className="text-white hover:text-orange-400">
+                            <button onClick={handelOut}>Sing OUt</button>
+                        </li>
+                    ) :
+                    (
+                        <li> <Link to='/login' className="text-white hover:text-orange-400">Login </Link></li>
+                    )
+            }
+
         </>
 
     )

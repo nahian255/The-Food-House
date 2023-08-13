@@ -7,8 +7,9 @@ import { AuthContext } from '../../authProvidr/Provider';
 
 const Longin = () => {
 
-    const { login } = useContext(AuthContext)
+    const { login, googleSingIn } = useContext(AuthContext)
     const navigate = useNavigate()
+
     const handelLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value
@@ -28,9 +29,22 @@ const Longin = () => {
                 console.log(errorMessage);
 
             });
-
         navigate('/')
-    }
+
+
+    };
+
+    // google Login 
+    const handelGoogleSignIn = () => {
+        googleSingIn()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            }).catch((error) => {
+                // Handle Errors here.
+            });
+
+    };
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100" style={{ background: `url(${background})` }}>
@@ -78,7 +92,7 @@ const Longin = () => {
                             <button className="rounded-full bg-blue-200 text-4xl text-black py-2 px-4 hover:bg-blue-600">
                                 F
                             </button>
-                            <button className="rounded-full bg-blue-200 text-4xl text-black py-2 px-4 hover:bg-blue-600">
+                            <button onClick={handelGoogleSignIn} className="rounded-full bg-blue-200 text-4xl text-black py-2 px-4 hover:bg-blue-600">
                                 G
                             </button>
 
