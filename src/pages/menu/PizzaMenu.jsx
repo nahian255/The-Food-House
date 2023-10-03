@@ -31,8 +31,8 @@ const PizzaMenu = () => {
                         </tbody>
                     </table>
                     <div className="py-3 px-4 text-center">
-                        <Link to='/shop/dessert'><button className="bg-orange-300 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-                            ORDER YOUR FAVOURATE DISSERT
+                        <Link to='/shop/pizza'><button className="bg-orange-300 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+                            ORDER YOUR FAVOURATE PIZZA
                         </button></Link>
 
                     </div>

@@ -1,21 +1,22 @@
 import { Link } from 'react-router-dom';
 import useMenu from '../../hooks/useMenu';
 import PagesBanner from '../shared/PagesBanner';
-import imgSoup from "../../assets/menu/soup-bg.jpg"
+import imgDrinks from "../../assets/new/drinks.jpg"
 
-const ShoupMenu = () => {
+const DrinkMenu = () => {
     const [menu] = useMenu()
-    const soups = menu.filter(item => item.category === 'soup')
-    const soupsMenu = soups.slice(0, 6);
+    const drink = menu?.filter(item => item.category === 'drinks')
+    const DrinkedMenu = drink?.slice(0, 6);
 
+    console.log(menu);
     return (
         <div>
-            <PagesBanner image={imgSoup} title={'Shoup'}></PagesBanner>
+            <PagesBanner image={imgDrinks} title={'Shoup'}></PagesBanner>
             <div className="container mx-auto py-8">
                 <div className="overflow-x-auto">
                     <table className="min-w-full bg-white border border-gray-300 ">
                         <tbody className=" ">
-                            {soupsMenu.map((item, index) => (
+                            {DrinkedMenu?.map((item, index) => (
                                 <tr key={index} className={index % 2 === 0 ? 'bg-gray-100' : ''}>
                                     <td className="py-3 px-4">
                                         <img className="h-16 w-16 object-cover rounded" src={item.image} alt={item.name} />
@@ -30,8 +31,8 @@ const ShoupMenu = () => {
                         </tbody>
                     </table>
                     <div className="py-3 px-4 text-center">
-                        <Link to='/shop/Soup'><button className="bg-orange-300 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-                            ORDER YOUR FAVOURATE Shoup
+                        <Link to='/shop/drinks'><button className="bg-orange-300 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+                            ORDER YOUR FAVOURATE Drinks
                         </button></Link>
 
                     </div>
@@ -41,4 +42,4 @@ const ShoupMenu = () => {
     );
 };
 
-export default ShoupMenu;
+export default DrinkMenu;

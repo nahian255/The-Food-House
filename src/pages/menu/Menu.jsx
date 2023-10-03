@@ -4,11 +4,16 @@ import DessertMenu from "./DessertMenu";
 import PizzaMenu from "./PizzaMenu";
 import SalladMenu from "./SalladMenu";
 import ShoupMenu from "./ShoupMenu";
+import DrinkMenu from "./DrinkMenu";
+import { useEffect } from "react";
 
 
 const Menu = () => {
 
-
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo(5, 2);
+    }, []);
     return (
         <div>
             <PagesBanner image={image} title={'Menu Section'} subTitle={'we can see the all menu here and also pick your favourite'} />
@@ -19,12 +24,12 @@ const Menu = () => {
                     Enjoy our refreshing and nutritious salads that combine a mix of fresh vegetables, flavorful dressings, and crunchy toppings. From Caesar Salad to Greek Salad, our salads are the perfect choice for a healthy and tasty meal.
 
                 </p>
-
             </div>
             <SalladMenu />
             <PizzaMenu />
             <ShoupMenu />
             <DessertMenu />
+            <DrinkMenu />
 
 
 

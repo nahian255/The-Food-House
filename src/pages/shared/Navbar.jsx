@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../authProvidr/Provider';
 import { getAuth, signOut } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
+import './navbar.css'
 // import { HiMenu, HiX } from 'react-icons/hi'; // Example icons from React Icons library
 
 
@@ -30,10 +31,11 @@ const Navbar = () => {
 
     const li = (
         <>
-            <li> <Link to='/' className="text-white hover:text-orange-400">Home</Link></li>
-            <li> <Link to='/menu' className="text-white hover:text-orange-400">Menu</Link></li>
-            <li> <Link to='shop/salad' className="text-white hover:text-orange-400">Shop</Link></li>
-            <li> <Link to='/contactus' className="text-white hover:text-orange-400">Contactus</Link></li>
+            <li className="text-white hover:text-orange-400"> <Link to='/' >Home</Link></li>
+            <li className="text-white hover:text-orange-400"> <Link to='/menu' >Menu</Link></li>
+            <li className="text-white hover:text-orange-400"> <Link to='shop/salad' >Shop</Link></li>
+            <li className="text-white hover:text-orange-400"> <Link to='/contactus'>Contactus</Link></li>
+            <li className="text-white hover:text-orange-400"> <Link to='/dashboard' >Dashboard</Link></li>
             {
                 user ?
                     (
@@ -60,9 +62,8 @@ const Navbar = () => {
                                 <h1 className='text-2xl text-white hover:text-orange-400'>LOGO</h1>
                             </div>
                             <  div className="hidden md:block">
-                                <ul className="ml-96 flex items-center space-x-14">
+                                <ul id='navbar' className="ml-96 flex items-center space-x-14">
                                     {li}
-
                                 </ul>
                             </div>
                         </div>

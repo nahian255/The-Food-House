@@ -1,9 +1,15 @@
+import { useEffect } from "react";
 import Card from "../../../component/Card";
 import useMenu from "../../../hooks/useMenu";
 
 const Drinks = () => {
-    const [menu] = useMenu()
 
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo(5, 2);
+    }, []);
+
+    const [menu] = useMenu()
     const drinkses = menu.filter(item => item.category === 'drinks')
 
 

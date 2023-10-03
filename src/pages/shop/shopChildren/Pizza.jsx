@@ -1,8 +1,14 @@
 import useMenu from "../../../hooks/useMenu";
 import Card from "../../../component/Card";
+import { useEffect } from "react";
 
 
 const Pizza = () => {
+
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo(5, 2);
+    }, []);
 
     const [menu] = useMenu()
     const pizzas = menu.filter(item => item.category === 'pizza')

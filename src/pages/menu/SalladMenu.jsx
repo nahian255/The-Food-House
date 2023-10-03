@@ -11,7 +11,7 @@ const SalladMenu = () => {
 
     return (
         <div className="pt-12">
-            <PagesBanner image={saladImg} title={'Pizza'}></PagesBanner>
+            <PagesBanner image={saladImg} title={'Sallad'}></PagesBanner>
             <div className="container mx-auto py-8">
                 <div className="overflow-x-auto">
                     <table className="min-w-full bg-white border border-gray-300 ">

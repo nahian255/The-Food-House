@@ -30,8 +30,6 @@ const Longin = () => {
 
             });
         navigate('/')
-
-
     };
 
     // google Login 
@@ -43,7 +41,6 @@ const Longin = () => {
             }).catch((error) => {
                 // Handle Errors here.
             });
-
     };
 
     return (
