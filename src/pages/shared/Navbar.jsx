@@ -53,13 +53,13 @@ const Navbar = () => {
     )
     return (
         <div >
-            <nav className="bg-black">
+            <nav className="bg-gray-600">
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex justify-around">
                             <div className="">
                                 {/* Your logo image or text */}
-                                <h1 className='text-2xl text-white hover:text-orange-400'>LOGO</h1>
+                                <h1 className='text-2xl text-white hover:text-orange-400'>The Food House</h1>
                             </div>
                             <  div className="hidden md:block">
                                 <ul id='navbar' className="ml-96 flex items-center space-x-14">

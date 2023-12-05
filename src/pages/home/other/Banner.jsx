@@ -10,7 +10,7 @@ const Banner = () => {
 
 
     return (
-        <div className="carousel h-[750px] w-full pb-8">
+        <div className="carousel lg:h-[700px] w-full lg:pb-8">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src={img1} className="w-full" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

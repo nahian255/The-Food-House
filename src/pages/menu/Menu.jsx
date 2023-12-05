@@ -14,10 +14,11 @@ const Menu = () => {
         // Scroll to the top of the page when the component mounts
         window.scrollTo(5, 2);
     }, []);
+
     return (
         <div>
             <PagesBanner image={image} title={'Menu Section'} subTitle={'we can see the all menu here and also pick your favourite'} />
-            <div className="py-10 container mx-auto">
+            <div className="px-10 md:px-24 py-10">
                 <h1 className="text-center font-bold text-4xl"> today&apos;s offer</h1>
                 <p className="text-xl mt-4">Experience the delightful flavors of our special menu crafted just    , for      you.
                     Indulge in our mouthwatering pizzas made with the finest ingredients and a variety of toppings. Whether you prefer classic Margherita, spicy Pepperoni, or exotic Hawaiian, we have the perfect pizza to satisfy your cravings.
