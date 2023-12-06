@@ -1,5 +1,15 @@
-
+import Swal from 'sweetalert2'
 const Card = ({ array }) => {
+
+    const AddToCard = () => {
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Succesfully Add to Card",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
 
     const { name, image, recipe, } = array
     return (
@@ -10,7 +20,7 @@ const Card = ({ array }) => {
                 <p className="text-gray-700 text-base">{recipe}</p>
             </div>
             <div className="px-6 py-4">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <button onClick={AddToCard} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Add to card
                 </button>
             </div>
